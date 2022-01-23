@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+</head>
+<body>
+<h4>Contact Us</h4>
+
+    {% for obj in object_list %}
+        <ul>
+            <li><a href="{{ obj.name }}">{{ obj.name }}</a></li>
+        </ul>
+    {% endfor %}
+
+<form method="post">
+    <input type="text" name="title" placeholder="Title">
+    <input type="text" name="text" placeholder="Your message">
+    <input type="email" name="email" placeholder="Email">
+    <button type="submit">Send</button>
+</form>
+</body>
+</html>
