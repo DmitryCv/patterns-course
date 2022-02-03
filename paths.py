@@ -1,5 +1,6 @@
 from wframework import render
 from models import Site
+from reusepatterns.decorators import debug
 
 site = Site()
 
@@ -18,7 +19,7 @@ def index_page(request):
     content = render('index.html', object_list=[*obj_list])
     return '200 OK', bytes(content, 'utf-8')
 
-
+@debug
 def create_course(request):
     if request['method'] == 'POST':
         data = request['data']
@@ -32,7 +33,7 @@ def create_course(request):
         content = render('add_course.html', object_list=[*obj_list])
         return '200 OK', bytes(content, 'utf-8')
 
-
+@debug
 def clone_course(request):
     if request['method'] == 'POST':
         data = request['data']
@@ -48,7 +49,7 @@ def clone_course(request):
         content = render('clone.html', object_list=[*obj_list])
         return '200 OK', bytes(content, 'utf-8')
 
-
+@debug
 def list_course(request):
     content = render('list.html', object_list=[*obj_list], courses=site.list_courses())
     return '200 OK', bytes(content, 'utf-8')
