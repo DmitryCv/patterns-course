@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Clone course{% endblock %}
+
+{% block content %}
+
+    <p>For cloning existing courses</p>
+    <form method="post">
+        <input type="text" name="name" placeholder="Course name">
+        <button type="submit">Clone</button>
+    </form>
+{% endblock %}
